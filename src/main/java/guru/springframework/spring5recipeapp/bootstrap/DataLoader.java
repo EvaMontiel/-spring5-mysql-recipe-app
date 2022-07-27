@@ -9,8 +9,8 @@ import java.util.Set;
 
 import javax.transaction.Transactional;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
@@ -27,6 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
+@Profile("default")
 public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
 	private final UnitOfMeasureRepository unitOfMeasureRepository;
